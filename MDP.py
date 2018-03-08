@@ -65,12 +65,14 @@ class MDP:
 	
 	# helpers for mdp computation and visualization		
 	def show(self, map, policy=False):
+		#format np output to 2 decimal places
+		np.set_printoptions(formatter={'float': lambda x: "{0:0.2f}".format(x)})
 		height = self.map_.getHeight()
 		width = self.map_.getWidth()
 		toDisplay = []
 		print('\n')
 		if policy == True:
-			print(map)
+			#print(map)
 			toDisplay = []
 			for r, row in enumerate(map):
 				toDisplay.append([])
@@ -82,25 +84,12 @@ class MDP:
 				#toDisplay.append(rowDisplay)
 			print(np.array(toDisplay)) 
 		else:
-			if type(map[0][0]) is float64: 
-				print(np.array([[int(1000*m)/1000 for m in row] for row in map]))
-			else:
-				print(np.array(map))
+			#if type(map[0][0]) is float64: 
+			#	print(np.array([[int(1000*m)/1000 for m in row] for row in map]))
+			#else:
+			print(np.array(map))
 		print('\n')
 		
-	def compact(self, map):
-		clist = []
-		for i, e in enumerate(map):
-			if not e == 0:
-				clist.append((i, e))
-		return clist
-		
-	def show_compact(self, values):
-		print('\n')
-		for i, v in self.compact(values):
-			print("(%i, %f)" % (i+1, v))
-		print('\n')
-
 	def to2D(self, s):
 		y = int(s/self.map_.getWidth())
 		x = s % self.map_.getWidth()
