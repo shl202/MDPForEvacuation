@@ -1,0 +1,15 @@
+c c for comments
+c first non comment and non empty line should indicate
+c the dimension of the map
+c gunner positions:
+c safest route: (6, 2)
+
+8 7
+WWWEWWW
+WWW   W
+WWW W W
+WWW W W
+E     W
+WW  W W
+E     W
+WWWEWWW
