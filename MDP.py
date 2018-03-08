@@ -4,8 +4,6 @@ from sys import argv
 import numpy as np
 import string
 from numpy import *
-from numpy.linalg import inv
-import matplotlib.pyplot as plt
 from Map import Map
 
 class MDP:
